@@ -25,15 +25,8 @@ import { Button } from "../ui/button";
 import { Loader2 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { forkIdeaIntoDB } from "@/actions/idea";
-import { useRouter } from "next/navigation";
 
-export default function IdeaForkForm({
-  className,
-  idea,
-}: {
-  className?: string;
-  idea: IIdea;
-}) {
+export default function IdeaForkForm({ idea }: { idea: IIdea }) {
   const form = useForm<TIdeaForkSchema>({
     resolver: zodResolver(IdeaForkSchema),
     defaultValues: {
@@ -43,7 +36,6 @@ export default function IdeaForkForm({
   });
 
   const { toast } = useToast();
-  const router = useRouter();
 
   const handleFormSubmit = async (data: TIdeaForkSchema) => {
     try {
@@ -63,7 +55,7 @@ export default function IdeaForkForm({
           title: "Idea forked successfully",
         });
       setTimeout(() => {
-        window.location.href = `/ideas/${idea._id}`;
+        window.location.href = `/ideas/${resp?.idea._id}`;
       }, 1000);
     } catch (error) {
       toast({
@@ -102,7 +94,7 @@ export default function IdeaForkForm({
                   <SelectTrigger>
                     <SelectValue />
                   </SelectTrigger>
-                  <SelectContent>
+                  <SelectContent side="top">
                     {visibility.map((v) => (
                       <SelectItem key={v.value} value={v.value}>
                         {v.label}

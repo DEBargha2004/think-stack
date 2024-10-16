@@ -34,17 +34,19 @@ export default function IdeaShareButton({ id }: { id: string }) {
           <Share2 className="h-4 w-4" />
         </Button>
       </DialogTrigger>
-      <DialogContent>
+      <DialogContent className="overflow-hidden">
         <DialogHeader>
           <DialogTitle>Share Idea</DialogTitle>
         </DialogHeader>
         <DialogDescription>
           Copy the link below to share your idea with others.
         </DialogDescription>
-        <div className="mt-2 flex justify-between items-center">
-          <p className="text-sm opacity-90">
-            {window.location.origin}/ideas/{id}
-          </p>
+        <div className="mt-2 flex justify-between items-center w-full overflow-hidden">
+          <div className="w-4/5">
+            <p className="text-sm opacity-90 w-full truncate">
+              {window.location.origin}/ideas/{id}
+            </p>
+          </div>
           <Button
             className="px-2 [&>svg]:h-4 [&>svg]:w-4"
             variant={"outline"}

@@ -191,7 +191,7 @@ async function updateIdeaVisibilityIntoDB(
 async function forkIdeaIntoDB(
   id: string,
   data: TIdeaForkSchema,
-): Promise<ServerActionResponse> {
+): Promise<ServerActionResponse<{ idea: IIdea }>> {
   const { userId, sessionId } = auth();
 
   if (!userId || !sessionId)
@@ -228,7 +228,7 @@ async function forkIdeaIntoDB(
 
     await newIdea.save();
     return {
-      message: "Idea forked successfully",
+      idea: newIdea.toObject(),
     };
   } catch (error) {
     return {
