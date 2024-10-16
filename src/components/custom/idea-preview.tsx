@@ -28,6 +28,7 @@ function IdeaPreview({
                 edit: true,
                 visibility: true,
                 fork: idea.visibility === "public" && userId !== idea.userId,
+                share: true,
               }}
             />
           </div>

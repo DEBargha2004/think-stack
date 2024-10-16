@@ -41,7 +41,7 @@ export const useGlobalAppStore = create<State & Action>((set) => ({
     set(
       produce((state: State) => {
         if (!state.ideas) return;
-        state.ideas.push(idea);
+        state.ideas.unshift(idea);
       }),
     );
   },

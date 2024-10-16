@@ -20,7 +20,7 @@ export default async function Page({ params }: { params: { id: string } }) {
       <IdeaContentContainer>
         <IdeaPreview
           idea={resp.idea}
-          previewOnly={resp.idea.userId !== userId}
+          previewOnly={false}
           userId={userId ?? ""}
         />
       </IdeaContentContainer>

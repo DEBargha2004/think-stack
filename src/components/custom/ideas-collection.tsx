@@ -38,7 +38,7 @@ export default function IdeasCollection({
   }, [ideas]);
 
   return (
-    <>
+    <div className="space-y-4">
       {formattedIdeasByDate.map((ideaOfDate) => (
         <section key={ideaOfDate.date.toDateString()} className="space-y-6">
           <h1 className="text-3xl">{parseDate(ideaOfDate.date)}</h1>
@@ -49,6 +49,6 @@ export default function IdeasCollection({
           </div>
         </section>
       ))}
-    </>
+    </div>
   );
 }

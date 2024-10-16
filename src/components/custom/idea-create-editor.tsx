@@ -124,7 +124,10 @@ export default function IdeaCreateEditor({}: { disabled?: boolean }) {
           className="text-2xl border-none focus-visible:ring-0 resize-none leading-7 p-0 w-full"
         />
         <div className="flex gap-2">
-          <IdeaControls id={ideaState._id} controls={{ visibility: true }} />
+          <IdeaControls
+            id={ideaState._id}
+            controls={{ visibility: true, share: true }}
+          />
         </div>
       </div>
       <Separator />

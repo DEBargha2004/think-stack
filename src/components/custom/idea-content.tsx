@@ -27,6 +27,8 @@ export default function IdeaContent({
       ? hljs.highlightAuto(ideaContent.data).value
       : "";
 
+  if (!window) hljs.highlightAll();
+
   useEffect(() => {
     hljs.highlightAll();
   }, [highlightedCode]);
