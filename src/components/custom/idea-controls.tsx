@@ -1,9 +1,6 @@
 import Link from "next/link";
 import { MakePublicButton } from "./make-public";
 import { Button } from "../ui/button";
-import { Share2 } from "lucide-react";
-import { Dialog, DialogHeader, DialogTitle, DialogTrigger } from "../ui/dialog";
-import { DialogContent } from "@radix-ui/react-dialog";
 import IdeaShareButton from "./idea-share-button";
 
 export default function IdeaControls({

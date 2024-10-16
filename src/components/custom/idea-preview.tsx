@@ -25,8 +25,8 @@ function IdeaPreview({
             <IdeaControls
               id={idea._id}
               controls={{
-                edit: true,
-                visibility: true,
+                edit: userId === idea.userId,
+                visibility: userId === idea.userId,
                 fork: idea.visibility === "public" && userId !== idea.userId,
                 share: true,
               }}
