@@ -6,7 +6,7 @@ import { cn } from "@/lib/utils";
 import CodeEditorWrapper from "./code-editor-wrapper";
 
 import hljs from "highlight.js/lib/core";
-import javascript from "highlight.js/lib/languages/javascript";
+import typescript from "highlight.js/lib/languages/typescript";
 import python from "highlight.js/lib/languages/python";
 import cpp from "highlight.js/lib/languages/cpp";
 import html from "highlight.js/lib/languages/xml";
@@ -15,7 +15,7 @@ import css from "highlight.js/lib/languages/css";
 
 import "highlight.js/styles/atom-one-dark.css";
 
-hljs.registerLanguage("javascript", javascript);
+hljs.registerLanguage("typescript", typescript);
 hljs.registerLanguage("python", python);
 hljs.registerLanguage("cpp", cpp);
 hljs.registerLanguage("html", html);
