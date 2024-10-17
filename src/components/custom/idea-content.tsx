@@ -44,9 +44,15 @@ export default function IdeaContent({
         </div>
       )}
       {ideaContent.type === "snippet" && (
-        <CodeEditorWrapper lineCount={ideaContent.data.split("\n").length}>
-          <pre className="w-full overflow-x-auto">
-            <code style={{ backgroundColor: "var(--background)" }}>
+        <CodeEditorWrapper
+          lineCount={ideaContent.data.split("\n").length}
+          onCopy={() => navigator.clipboard?.writeText(ideaContent.data)}
+        >
+          <pre className="w-full overflow-x-auto p-[10px]">
+            <code
+              style={{ backgroundColor: "var(--background)", padding: 0 }}
+              className="leading-normal text-[12px]"
+            >
               {ideaContent.data}
             </code>
           </pre>

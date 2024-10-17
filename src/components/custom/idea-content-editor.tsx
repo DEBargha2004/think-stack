@@ -115,11 +115,15 @@ const IdeaContentCodeEditor = forwardRef<
 >(({ value, className, index, ...props }, ref) => {
   const { setIdea } = useIdeaPlaygroundContext();
   return (
-    <CodeEditorWrapper isEditor={true} lineCount={value.split("\n").length}>
+    <CodeEditorWrapper
+      isEditor={true}
+      lineCount={value.split("\n").length}
+      onCopy={() => navigator.clipboard?.writeText(value)}
+    >
       <div
         ref={ref}
         className={cn(
-          "border w-full text-muted dark:text-muted-foreground",
+          "border-x w-full text-muted dark:text-muted-foreground",
           className,
         )}
         {...props}
@@ -137,6 +141,7 @@ const IdeaContentCodeEditor = forwardRef<
             fontFamily: '"Fira code", "Fira Mono", monospace',
             fontSize: "12px",
             width: "100%",
+            lineHeight: "1.5",
           }}
         />
       </div>
