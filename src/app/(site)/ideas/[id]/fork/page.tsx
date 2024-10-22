@@ -1,5 +1,5 @@
 import { getIdeaFromDB } from "@/actions/idea";
-import IdeaForkForm from "@/components/custom/fork-idea-form";
+import IdeaForkForm from "@/components/custom/forms/fork-idea-form";
 import { isActionError } from "@/lib/utils";
 import { auth } from "@clerk/nextjs/server";
 
